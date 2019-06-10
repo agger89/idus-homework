@@ -1,0 +1,8 @@
+{
+  "name": "idus-homework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/agger89/idus-homework.git",
+  "author": "조충은",
+  "license": "MIT"
+}
