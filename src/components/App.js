@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
+import HomeworkAction from './container/HomeworkAction';
 
 class App extends Component {
     render() {
-        return (
-            <div className="wrap">
-                <div className="text">idus-homework</div>
-                test
-            </div> 
-        )
+        return <HomeworkAction />
     }
 }
 
