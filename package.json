@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/agger89/idus-homework.git",
   "author": "조충은",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
 }
