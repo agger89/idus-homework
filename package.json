@@ -9,6 +9,10 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
+  "scripts": {
+    "start": "set NODE_ENV=development&&webpack-dev-server",
+    "build": "set NODE_ENV=production&&webpack -p"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
