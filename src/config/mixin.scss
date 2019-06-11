@@ -1,0 +1,33 @@
+$mobie-min-width: 320px;
+$mobie-max-width: 767px;
+$tablet-min-width: 768px;
+$tablet-max-width: 1024px;
+$desktop: 1025px;
+
+@mixin breakpoint( $breakpoint ) {
+    @if $breakpoint == "iphone5" {
+        @media (min-width: 320px) and (max-width: 374px) {
+            @content;
+        }
+    }
+    @if $breakpoint == "mobile" {
+        @media (min-width: $mobie-min-width) and (max-width: $mobie-max-width) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "tablet" {
+        @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "tablet-desktop" {
+        @media (min-width: $tablet-min-width) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "desktop" {
+        @media (min-width: $desktop) {
+            @content;
+        }
+    }
+}

@@ -1,7 +1,174 @@
-.wrap {
-    .text {
-        font-size: 20px;
-        background-color: #000;
-        color: #fff;
+@import './config/base.css';
+@import './config/size.scss';
+@import './config/mixin.scss';
+
+h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+.card-review {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-size: 12px;
+    overflow: hidden;
+}
+.card-layout-section {
+    padding-right: 24px;
+    padding-left: 24px;
+    @include breakpoint('tablet-desktop') {
+        padding-right: 80px;
+        padding-left: 80px;
+    }
+    & > div {
+        margin-bottom: 40px;
+    }
+    .card-layout-wrap {
+        @include breakpoint('tablet-desktop') {
+            &::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            margin-right: -6px;    
+            margin-left: -6px;
+        }
+        .card-wrap {
+            padding-top: 6px;   
+            padding-bottom: 6px;
+            @include breakpoint('tablet') {
+                width: $tablet-grid-width;
+            }
+            @include breakpoint('tablet-desktop') {
+                float: left;
+                padding-right: 6px;
+                padding-left: 6px;
+            }
+            @include breakpoint('desktop') {
+                width: $desktop-grid-width;
+            }
+            .card-inner-wrap {
+                border: 1px solid #999;
+                border-radius: 5px;
+                background-color: #fafafa;
+            }
+            .card-image {
+                padding-top: 100%;
+                background-image: url('./images/idusLogo.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .card-title-area {
+                height: 90px;
+                padding: 8px;
+                border-bottom: 1px solid #999;
+                & > * {
+                    display: block;
+                    font-size: 12px;
+                }
+                .card-sub-title {
+                    margin-bottom: 6px;
+                    color: #999;
+                }
+                .card-main-title {
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
+            }
+            .card-rating-area {
+                display: table;
+                width: 100%;
+                height: 60px;
+                padding: 6px;
+                .card-rating-wrap {
+                    display: table-row;
+                    height: 100%;
+                    .card-rating-group {
+                        display: table-cell;
+                        vertical-align: middle;
+                        .card-rating {
+                            display: block;
+                            width: 15px;
+                            height: 15px;
+                            margin-right: 4px;
+                            background-color: #999;
+                            border-radius: 50%;
+                            float: left;
+                            &.star {
+                                background-color: orange;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .portrait2 {
+        .card-layout-wrap {
+            .card-title-area {
+                border-bottom: 0;
+            }            
+            .card-rating-area {
+                display: none;
+            }
+        }
+    }
+    .landscape {
+        .card-layout-wrap {
+            .card-wrap {
+                @include breakpoint('desktop') {
+                    width: $tablet-grid-width;
+                }
+            }
+            .card-inner-wrap {
+                position: relative;
+                display: block;
+                &::after {
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+                .card-image {
+                    width: 40%;
+                    min-width: 120px;
+                    float: left;
+                    padding-top: 40%;
+                }
+                .card-text-wrap {
+                    position: absolute;
+                    top: 0;
+                    right:0;
+                    bottom: 0;
+                    left: 40%;
+                    padding: 6px;
+                    @include breakpoint('iphone5') {
+                        left: 120px;
+                    }
+                    .card-title-area {
+                        padding: 0;
+                        border-bottom: 0;
+                        .card-review {
+                            -webkit-line-clamp: 2;
+                        }
+                    }
+                    .card-rating-area {
+                        position: absolute;
+                        bottom: 6px;
+                        display: block;
+                        height: auto;
+                        padding: 0;
+                        .card-rating-sub-text {
+                            padding-left: 8px;
+                            margin-left: 4px;
+                            border-left: 1px solid #999;
+                            font-size: 12px;
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
