@@ -2,7 +2,13 @@
 @import './config/size.scss';
 @import './config/mixin.scss';
 
-h3 {
+// common 
+.homework-title {
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+.ui-title {
     margin: 10px 0;
     font-size: 20px;
     font-weight: 600;
@@ -14,6 +20,27 @@ h3 {
     font-size: 12px;
     overflow: hidden;
 }
+.ie {
+    .card-review {
+        display: block;
+        height: 14px;
+    }
+    .landscape {
+        .card-review {
+            height: 28px;
+            @include breakpoint('iphone5') {
+                height: 14px;
+            }
+            // @include breakpoint('tablet-desktop') {
+            //     height: 120px;
+            // }
+        }
+    }
+}
+
+
+// common end
+
 .card-layout-section {
     padding-right: 24px;
     padding-left: 24px;
@@ -150,7 +177,20 @@ h3 {
                         padding: 0;
                         border-bottom: 0;
                         .card-review {
+                            height: 28px;
                             -webkit-line-clamp: 2;
+                            @include breakpoint('iphone5') {
+                                height: 14px;
+                                -webkit-line-clamp: 1;
+                            }
+                            // @include breakpoint('tablet-desktop') {
+                            //     height: 28px;
+                            //     -webkit-line-clamp: 2;
+                            // }
+                            @include breakpoint('desktop') {
+                                height: 56px;
+                                -webkit-line-clamp: 4;
+                            }
                         }
                     }
                     .card-rating-area {
@@ -160,15 +200,103 @@ h3 {
                         height: auto;
                         padding: 0;
                         .card-rating-sub-text {
+                            display: inline-block;
                             padding-left: 8px;
                             margin-left: 4px;
                             border-left: 1px solid #999;
                             font-size: 12px;
                             color: #999;
+                            @include breakpoint('iphone5') {
+                                display: block;
+                                padding: 0;
+                                margin: 0;
+                                border: 0;
+                            }
                         }
                     }
                 }
             }
         }
+    }
+}
+.form-wrap {
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-bottom: 100px;
+    @include breakpoint('tablet-desktop') {
+        padding-right: 80px;
+        padding-left: 80px;
+    }
+    & > div {
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    .textarea-wrap {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-size: 12px;
+        .write-textarea {
+            width: 100%;
+            height: 100%;
+            padding: 8px;
+            vertical-align: top;
+            outline: none;
+            border: 0;
+            border: 1px solid #999;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-appearance: none;
+            &:focus{
+                border-color: aqua;
+            }
+        }
+        .textarea-counter {
+            position: absolute;
+            right: 8px;
+            bottom: 8px;
+            display: block;
+        }
+    }
+    .first-form {
+        position: relative;
+        display: flex;
+        .textarea-wrap {
+            width: calc(100% - 80px - 4px);
+            float: left;
+            vertical-align: top;
+        }
+        .btn-wrap {
+            height: 100%;
+            float: right;
+            margin-left: 4px;
+            border-left: 0;
+            vertical-align: top;
+            .save-btn {
+                width: 80px;
+                height: 100%;
+                background-color: #fff;
+                border: 1px solid #999;    
+                .btn-text {
+                    font-size: 14px;
+                    &.active {
+                        color: aqua;    
+                    }
+                }
+            }
+        }
+    }
+    .second-form {
+        .write-textarea {
+            background-color: rgb(238, 238, 238);
+            &::placeholder {
+                color: red;
+              }
+        }
+    }
+    .third-form {
+        .write-textarea {
+            outline: none;
+        }   
     }
 }
