@@ -183,10 +183,6 @@
                                 height: 14px;
                                 -webkit-line-clamp: 1;
                             }
-                            // @include breakpoint('tablet-desktop') {
-                            //     height: 28px;
-                            //     -webkit-line-clamp: 2;
-                            // }
                             @include breakpoint('desktop') {
                                 height: 56px;
                                 -webkit-line-clamp: 4;
